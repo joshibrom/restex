@@ -3,6 +3,6 @@ package model
 import "net/url"
 
 type Link struct {
-	Title string
-	Href  url.URL
+	Title string  `json:"title"`
+	Href  url.URL `json:"href"`
 }
