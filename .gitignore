@@ -1,0 +1,13 @@
+# binaries
+cvforge
+dist/
+
+# generated output
+*.tex
+*.pdf
+*.aux
+*.log
+
+# editor
+.vscode/
+.idea/
