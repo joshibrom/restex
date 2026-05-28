@@ -2,7 +2,10 @@
 // structure of a resume.
 package model
 
-import "net/url"
+import (
+	"encoding/json"
+	"os"
+)
 
 type Resume struct {
 	Contact             ContactInformation    `json:"contact"`
@@ -56,3 +59,16 @@ type ProfessionalService struct {
 }
 
 type MonthYear string
+
+func LoadFromFile(path string) (*Resume, error) {
+	content, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	resume := Resume{}
+	err = json.Unmarshal(content, &resume)
+	if err != nil {
+		return nil, err
+	}
+	return &resume, nil
+}
