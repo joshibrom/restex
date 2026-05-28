@@ -36,7 +36,7 @@ type Project struct {
 	Category       string     `json:"category"`
 	Stack          []string   `json:"stack"`
 	CompletionDate *MonthYear `json:"completionDate,omitempty"`
-	URL            *url.URL   `json:"url,omitempty"`
+	URL            *string    `json:"url,omitempty"`
 	Bullets        []string   `json:"bullets"`
 	DoRender       bool       `json:"doRender"`
 }
