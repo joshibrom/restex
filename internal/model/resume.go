@@ -5,45 +5,40 @@ package model
 import "net/url"
 
 type Resume struct {
-	Contact    ContactInformation `json:"contact"`
-	Experience []Employment       `json:"experience"`
-	Projects   []Project          `json:"projects"`
-	Skills     []Skill            `json:"skills"`
+	Contact             ContactInformation    `json:"contact"`
+	Experience          []Employment          `json:"experience"`
+	Projects            []Project             `json:"projects"`
+	Skills              []Skill               `json:"skills"`
+	ProfessionalService []ProfessionalService `json:"professionalService"`
 }
 
 type ContactInformation struct {
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-	Phone     struct {
-		ExitCode    *string `json:"exitCode,omitempty"`
-		CountryCode *uint8  `json:"countryCode,omitempty"`
-		AreaCode    uint16  `json:"areaCode"`
-		Prefix      uint16  `json:"prefix"`
-		Subscriber  uint16  `json:"subscriber"`
-	} `json:"phone"`
-	Email    string `json:"email"`
-	Website  Link   `json:"website"`
-	LinkedIn Link   `json:"linkedin"`
+	FirstName string      `json:"firstName"`
+	LastName  string      `json:"lastName"`
+	Phone     PhoneNumber `json:"phone"`
+	Email     string      `json:"email"`
+	Website   Link        `json:"website"`
+	LinkedIn  Link        `json:"linkedin"`
 }
 
 type Employment struct {
-	Title     string   `json:"title"`
-	Employer  string   `json:"employer"`
-	Location  *string  `json:"location,omitempty"`
-	StartDate string   `json:"startDate"`
-	EndDate   *string  `json:"endDate,omitempty"`
-	Bullets   []string `json:"bullets"`
-	DoRender  bool     `json:"doRender"`
+	Title     string     `json:"title"`
+	Employer  string     `json:"employer"`
+	Location  *string    `json:"location,omitempty"`
+	StartDate MonthYear  `json:"startDate"`
+	EndDate   *MonthYear `json:"endDate,omitempty"`
+	Bullets   []string   `json:"bullets"`
+	DoRender  bool       `json:"doRender"`
 }
 
 type Project struct {
-	Title          string   `json:"title"`
-	Category       string   `json:"category"`
-	Stack          []string `json:"stack"`
-	CompletionDate *string  `json:"completionDate,omitempty"`
-	URL            *url.URL `json:"url,omitempty"`
-	Bullets        []string `json:"bullets"`
-	DoRender       bool     `json:"doRender"`
+	Title          string     `json:"title"`
+	Category       string     `json:"category"`
+	Stack          []string   `json:"stack"`
+	CompletionDate *MonthYear `json:"completionDate,omitempty"`
+	URL            *url.URL   `json:"url,omitempty"`
+	Bullets        []string   `json:"bullets"`
+	DoRender       bool       `json:"doRender"`
 }
 
 type Skill struct {
@@ -52,10 +47,12 @@ type Skill struct {
 }
 
 type ProfessionalService struct {
-	Title        string  `json:"title"`
-	Organization string  `json:"organization"`
-	StartDate    string  `json:"startDate"`
-	EndDate      *string `json:"endDate,omitempty"`
-	Description  string  `json:"description"`
-	DoRender     bool    `json:"doRender"`
+	Title        string     `json:"title"`
+	Organization string     `json:"organization"`
+	StartDate    MonthYear  `json:"startDate"`
+	EndDate      *MonthYear `json:"endDate,omitempty"`
+	Description  string     `json:"description"`
+	DoRender     bool       `json:"doRender"`
 }
+
+type MonthYear string
