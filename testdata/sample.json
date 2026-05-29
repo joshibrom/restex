@@ -1,0 +1,120 @@
+{
+  "contact": {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "phone": {
+      "countryCode": 1,
+      "areaCode": 512,
+      "prefix": 555,
+      "subscriber": 1234
+    },
+    "email": "jane.doe@example.com",
+    "website": {
+      "title": "janedoe.dev",
+      "href": "https://janedoe.dev"
+    },
+    "linkedin": {
+      "title": "linkedin.com/in/janedoe",
+      "href": "https://linkedin.com/in/janedoe"
+    }
+  },
+  "experience": [
+    {
+      "title": "Software Engineer II",
+      "employer": "Acme Corp",
+      "location": "Austin, TX",
+      "startDate": "03/2022",
+      "endDate": null,
+      "bullets": [
+        "Led migration of legacy monolith to microservices, reducing deployment time by 40%.",
+        "Designed and maintained REST APIs serving 500k+ daily requests.",
+        "Mentored two junior engineers through onboarding and first production deployments."
+      ],
+      "doRender": true
+    },
+    {
+      "title": "Junior Developer",
+      "employer": "Startup LLC",
+      "location": "Remote",
+      "startDate": "06/2020",
+      "endDate": "02/2022",
+      "bullets": [
+        "Built internal tooling in Python that automated weekly reporting, saving ~3 hours per week.",
+        "Contributed to a React dashboard used by the sales team for pipeline tracking."
+      ],
+      "doRender": true
+    }
+  ],
+  "projects": [
+    {
+      "title": "restex",
+      "category": "CLI Tool",
+      "stack": [
+        "Go",
+        "bubbletea",
+        "LaTeX"
+      ],
+      "completionDate": null,
+      "url": "https://github.com/janedoe/cvforge",
+      "bullets": [
+        "Terminal-based resume builder that compiles structured JSON data into LaTeX source.",
+        "TUI built with bubbletea; outputs a single portable binary."
+      ],
+      "doRender": true
+    },
+    {
+      "title": "janedoe.dev",
+      "category": "Personal Site",
+      "stack": [
+        "Hugo",
+        "SCSS"
+      ],
+      "completionDate": "04/2025",
+      "url": "https://janedoe.dev",
+      "bullets": [
+        "Custom Hugo site with no third-party theme, hand-authored layouts and SCSS.",
+        "Hosted on GitHub Pages with domain managed through Cloudflare."
+      ],
+      "doRender": true
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        "Go",
+        "TypeScript",
+        "Python",
+        "Zig"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "HTML",
+        "SCSS"
+      ]
+    },
+    {
+      "category": "Backend & Infra",
+      "items": [
+        "Node.js",
+        "Flask",
+        "PostgreSQL",
+        "Firebase",
+        "Docker"
+      ]
+    }
+  ],
+  "professionalService": [
+    {
+      "title": "Peer Reviewer",
+      "organization": "Journal of Web Engineering",
+      "startDate": "09/2023",
+      "endDate": null,
+      "description": "Review submitted manuscripts for technical accuracy and methodological soundness in web systems and distributed architecture.",
+      "doRender": true
+    }
+  ]
+}

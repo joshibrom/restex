@@ -2,54 +2,73 @@
 // structure of a resume.
 package model
 
-import "net/url"
+import (
+	"encoding/json"
+	"os"
+)
 
 type Resume struct {
-	Contact        ContactInformation
-	WorkExperience []Employment
-	Projects       []Project
-	Skills         []Skill
+	Contact             ContactInformation    `json:"contact"`
+	Experience          []Employment          `json:"experience"`
+	Projects            []Project             `json:"projects"`
+	Skills              []Skill               `json:"skills"`
+	ProfessionalService []ProfessionalService `json:"professionalService"`
 }
 
 type ContactInformation struct {
-	FirstName string
-	LastName  string
-	Phone     string
-	Email     string
-	Website   Link
-	LinkedIn  Link
+	FirstName string      `json:"firstName"`
+	LastName  string      `json:"lastName"`
+	Phone     PhoneNumber `json:"phone"`
+	Email     string      `json:"email"`
+	Website   Link        `json:"website"`
+	LinkedIn  Link        `json:"linkedin"`
 }
 
 type Employment struct {
-	Title     string
-	Employer  string
-	Location  *string
-	StartDate string
-	EndDate   *string
-	Bullets   []string
-	DoRender  bool
+	Title     string     `json:"title"`
+	Employer  string     `json:"employer"`
+	Location  *string    `json:"location,omitempty"`
+	StartDate MonthYear  `json:"startDate"`
+	EndDate   *MonthYear `json:"endDate,omitempty"`
+	Bullets   []string   `json:"bullets"`
+	DoRender  bool       `json:"doRender"`
 }
 
 type Project struct {
-	Title          string
-	Category       string
-	Stack          []string
-	CompletionDate *string
-	URL            *url.URL
-	Bullets        []string
-	DoRender       bool
+	Title          string     `json:"title"`
+	Category       string     `json:"category"`
+	Stack          []string   `json:"stack"`
+	CompletionDate *MonthYear `json:"completionDate,omitempty"`
+	URL            *string    `json:"url,omitempty"`
+	Bullets        []string   `json:"bullets"`
+	DoRender       bool       `json:"doRender"`
 }
 
 type Skill struct {
-	Category string
-	Items    []string
+	Category string   `json:"category"`
+	Items    []string `json:"items"`
 }
 
 type ProfessionalService struct {
-	Title        string
-	Organization string
-	StartDate    string
-	EndDate      *string
-	Description  string
-	DoRender     bool
+	Title        string     `json:"title"`
+	Organization string     `json:"organization"`
+	StartDate    MonthYear  `json:"startDate"`
+	EndDate      *MonthYear `json:"endDate,omitempty"`
+	Description  string     `json:"description"`
+	DoRender     bool       `json:"doRender"`
+}
+
+type MonthYear string
+
+func LoadFromFile(path string) (*Resume, error) {
+	content, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	resume := Resume{}
+	err = json.Unmarshal(content, &resume)
+	if err != nil {
+		return nil, err
+	}
+	return &resume, nil
 }
