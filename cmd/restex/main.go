@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/joshibrom/restex/internal/model"
+	"github.com/joshibrom/restex/internal/render"
 )
 
 func main() {
@@ -16,5 +17,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%#v\n", resume)
+
+	tex, err := render.Render(resume)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(tex)
 }

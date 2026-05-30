@@ -1,0 +1,9 @@
+{{ define "experience" }}{{ if .DoRender }}
+	\jobitem{ {{ prepare .Title }} }{ {{ prepare .Employer }} \textbar\ {{ prepare .Location }} }{ {{ .StartDate }} -- {{ with .EndDate }}{{ . }}{{ else }}Current{{ end }} }{
+		\begin{itemize}
+      {{ range .Bullets }}
+        \item {{ prepare . }}
+      {{ end }}
+		\end{itemize}
+	}
+{{ end }}{{ end }}

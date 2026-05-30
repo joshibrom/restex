@@ -1,0 +1,13 @@
+{{ define "heading" }}
+
+\par{\centering\small
+	{\Huge\bfseries\sffamily {{ .FirstName }} {{ .LastName }} \\}
+	\vspace{0.25em}
+	\textbf{Phone:} \href{ {{ phoneHref }} }{ {{ phoneText }} } \textbar\
+	\textbf{Email:} \href{mailto:{{ .Email }}}{ {{ .Email }} } \textbar\
+	\textbf{Website:} \href{ {{ .Website.Href }} }{ {{ .Website.Title }} } \textbar\
+	\textbf{LinkedIn:} \href{ {{ .LinkedIn.Href }} }{ {{ .LinkedIn.Title}} }\\
+	\vspace{0.5em}
+	\par}
+
+{{ end }}

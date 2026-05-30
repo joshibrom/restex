@@ -1,0 +1,46 @@
+{{ define "preamble" }}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{helvet, lmodern}
+\usepackage{fontspec}
+\usepackage{changepage}
+
+
+\newcommand{\indentboi}[2][1.25em]{\begin{adjustwidth}{#1}{#1}#2\end{adjustwidth}}
+\newcommand{\rsec}[2]{\textbf{\sffamily\large#1}\\\vspace{-0.8em}\hrule\vspace{0.2em}\indentboi{#2}\vspace{0.45em}}
+\newcommand{\secitemnb}[5][0em]{\textbf{#2} #3\hfill\textbf{#4}\indentboi[#1]{#5}}
+\newcommand{\jobitem}[4]{%
+  \textbf{#1} \hfill \textbf{#3} \\ % Line 1: Title and Dates
+  \textit{#2} % Line 2: Company | Location
+  #4 % The actual bullet points
+}
+\newcommand{\secitem}[5][0em]{
+  \textbf{#2} \hfill \textbf{#4} \\ % Line 1: Title and Dates
+  \textit{#3} % Line 2: Company | Location
+  #5 % The actual bullet points
+}
+
+
+\setmainfont{Nunito}[
+  Path=./Nunito/,
+  Extension = .ttf,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic,
+  BoldItalicFont=*-BoldItalic,
+]
+\setsansfont{NotoSans}[
+  Path=./Noto/,
+  Extension = .ttf,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic,
+  BoldItalicFont=*-BoldItalic,
+]
+
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+{{ end }}

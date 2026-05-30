@@ -18,6 +18,16 @@
       "href": "https://linkedin.com/in/janedoe"
     }
   },
+  "education": [
+    {
+      "credential": "Physics, B.S.",
+      "institution": "Pacific Tech",
+      "startDate": "03/2022",
+      "endDate": null,
+      "gpa": null,
+      "relevantCourses": null
+    }
+  ],
   "experience": [
     {
       "title": "Software Engineer II",
@@ -26,8 +36,8 @@
       "startDate": "03/2022",
       "endDate": null,
       "bullets": [
-        "Led migration of legacy monolith to microservices, reducing deployment time by 40%.",
-        "Designed and maintained REST APIs serving 500k+ daily requests.",
+        "Led migration of legacy monolith to microservices, **reducing deployment time** by 40%.",
+        "Designed and maintained REST APIs serving **500k+ daily requests**.",
         "Mentored two junior engineers through onboarding and first production deployments."
       ],
       "doRender": true
@@ -39,7 +49,7 @@
       "startDate": "06/2020",
       "endDate": "02/2022",
       "bullets": [
-        "Built internal tooling in Python that automated weekly reporting, saving ~3 hours per week.",
+        "Built internal tooling in Python that automated weekly reporting, **saving ~3 hours per week**.",
         "Contributed to a React dashboard used by the sales team for pipeline tracking."
       ],
       "doRender": true
@@ -55,7 +65,7 @@
         "LaTeX"
       ],
       "completionDate": null,
-      "url": "https://github.com/janedoe/cvforge",
+      "url": "https://github.com/janedoe/restex",
       "bullets": [
         "Terminal-based resume builder that compiles structured JSON data into LaTeX source.",
         "TUI built with bubbletea; outputs a single portable binary."
