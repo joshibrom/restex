@@ -1,0 +1,5 @@
+{{ define "service" }}{{ if .DoRender }}
+	\secitem[1.25em]{ {{ .Title }}}{ {{ .Organization }}\\}{ {{ .StartDate }} -- {{ with .EndDate }}{{ . }}{{ else }}Current{{ end}} }{
+    {{ .Description }}
+	}
+{{ end }}{{ end }}

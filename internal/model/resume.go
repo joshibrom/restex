@@ -9,6 +9,7 @@ import (
 
 type Resume struct {
 	Contact             ContactInformation    `json:"contact"`
+	Education           []Education           `json:"education"`
 	Experience          []Employment          `json:"experience"`
 	Projects            []Project             `json:"projects"`
 	Skills              []Skill               `json:"skills"`
@@ -22,6 +23,15 @@ type ContactInformation struct {
 	Email     string      `json:"email"`
 	Website   Link        `json:"website"`
 	LinkedIn  Link        `json:"linkedin"`
+}
+
+type Education struct {
+	Credential      string     `json:"credential"`
+	Institution     string     `json:"institution"`
+	StartDate       MonthYear  `json:"startDate"`
+	EndDate         *MonthYear `json:"endDate,omitempty"`
+	GPA             *float32   `json:"gpa,omitempty"`
+	RelevantCourses *[]string  `json:"relevantCourses,omitempty"`
 }
 
 type Employment struct {

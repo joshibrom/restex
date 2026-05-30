@@ -1,0 +1,39 @@
+{{ define "latex" }}
+\documentclass[letterpaper, 10pt]{article}
+
+{{ block "preamble" . }} {{ end }}
+
+\begin{document}
+{{ block "heading" .Contact }} {{ end }}
+
+\rsec{Education}{
+  {{ range .Education }}
+    {{ block "education" . }} {{ end }}
+  {{ end }}
+}
+
+\rsec{Work Experience}{
+	{{ range .Experience }}
+    {{ block "experience" . }} {{ end }}
+  {{ end }}
+}
+
+\rsec{Projects}{
+	{{ range .Projects }}
+    {{ block "project" . }} {{ end }}
+  {{ end }}
+}
+
+\rsec{Skills}{
+  {{ range .Skills }}
+    {{ block "skill" . }} {{ end }}
+  {{ end }}
+}
+
+\rsec{Leadership \& Professional Service}{
+  {{ range .ProfessionalService }}
+    {{ block "service" . }} {{ end }}
+  {{ end }}
+}
+\end{document}
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "project" }}{{ if .DoRender }}
+	\secitem
+    { {{ if .URL }} \href{ {{ .URL }} }{ {{ .Title }} } {{ else }} {{ .Title }} {{ end }} }
+    { {{ .Category }} \textbar\ {{ join .Stack ", " }} }
+    { {{ with .CompletionDate }} {{ . }} {{ else }} Current {{ end }} }
+    {
+      \begin{itemize}
+        {{ range .Bullets }}
+          \item {{ . }}
+        {{ end }}
+      \end{itemize}
+    }
+{{ end }}{{ end }}
