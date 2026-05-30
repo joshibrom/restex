@@ -6,12 +6,14 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/joshibrom/restex/internal/latex"
 	"github.com/joshibrom/restex/internal/model"
 )
 
 func Render(resume *model.Resume) (string, error) {
 	funcMap := template.FuncMap{
 		"join":      strings.Join,
+		"prepare":   latex.Prepare,
 		"phoneHref": resume.Contact.Phone.HrefValue,
 		"phoneText": resume.Contact.Phone.TextValue,
 	}

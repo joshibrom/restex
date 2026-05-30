@@ -1,6 +1,6 @@
 {{ define "education" }}
 
-	\textbf{ {{ .Credential }} } \textbar\ {{ .Institution }}.\hfill\textbf{ {{ .StartDate }} -- {{ with .EndDate}}{{ . }}{{ else }}Current{{ end}} } {{ if .GPA }}\newline
+	\textbf{ {{ prepare .Credential }} } \textbar\ {{ prepare .Institution }}.\hfill\textbf{ {{ .StartDate }} -- {{ with .EndDate}}{{ . }}{{ else }}Current{{ end}} } {{ if .GPA }}\newline
 	\textit{GPA: {{ .GPA }}/4.0 {{ with .RelevantCourses }}\textbar\ Coursework: {{ join . ", " }} {{ end }}} \hfill\newline
   {{ else if .RelevantCourses }}\newline
 	\textit{Coursework: {{ join .RelevantCourses ", " }}} \hfill\newline

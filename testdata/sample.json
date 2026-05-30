@@ -36,8 +36,8 @@
       "startDate": "03/2022",
       "endDate": null,
       "bullets": [
-        "Led migration of legacy monolith to microservices, reducing deployment time by 40\\%.",
-        "Designed and maintained REST APIs serving 500k+ daily requests.",
+        "Led migration of legacy monolith to microservices, **reducing deployment time** by 40%.",
+        "Designed and maintained REST APIs serving **500k+ daily requests**.",
         "Mentored two junior engineers through onboarding and first production deployments."
       ],
       "doRender": true
@@ -49,7 +49,7 @@
       "startDate": "06/2020",
       "endDate": "02/2022",
       "bullets": [
-        "Built internal tooling in Python that automated weekly reporting, saving ~3 hours per week.",
+        "Built internal tooling in Python that automated weekly reporting, **saving ~3 hours per week**.",
         "Contributed to a React dashboard used by the sales team for pipeline tracking."
       ],
       "doRender": true
@@ -107,7 +107,7 @@
       ]
     },
     {
-      "category": "Backend \\& Infra",
+      "category": "Backend & Infra",
       "items": [
         "Node.js",
         "Flask",
